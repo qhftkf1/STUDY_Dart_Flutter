@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428598609900",
+    "project_id": "circular-signal-224217",
+    "storage_bucket": "circular-signal-224217.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428598609900:android:6207f9d1c5c813308062c9",
+        "android_client_info": {
+          "package_name": "com.example.hellowworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428598609900-h1e0qomgrku0ugc90masp9ffi87t9rs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdvRY6dEtpJlYhj5kh5f8DWp8MivawnKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428598609900-h1e0qomgrku0ugc90masp9ffi87t9rs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
