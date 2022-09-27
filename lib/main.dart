@@ -8,10 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Appbar',
-      theme: ThemeData(
-        primarySwatch: Colors.red
-      ),
+      title: 'SnackBar',
+      theme: ThemeData(primarySwatch: Colors.orange),
       home: MyPage(),
     );
   }
@@ -24,91 +22,37 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title :Text('Appbar icon menu'),
+        title: Text('SnackBar'),
         centerTitle: true,
         elevation: 0.0,
-
-        actions: [
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: (){
-              print('shopping button is clicked');
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: (){
-              print('search button is clicked');
-            },
-          ),
-        ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/kk-logo-blue.png'),
-                backgroundColor: Colors.white,
+      body: MySnackBar(),
+    );
+  }
+}
+
+class MySnackBar extends StatelessWidget {
+  const MySnackBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: RaisedButton(
+        child: Text('Show me'),
+        onPressed: () {
+          Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text("Hello",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white
             ),
-              otherAccountsPictures: [
-                CircleAvatar(
-                  backgroundImage: AssetImage('assets/kk-logo-blue.png'),
-                  backgroundColor: Colors.white,
-                ),
-                // CircleAvatar(
-                //   backgroundImage: AssetImage('assets/kk-logo-blue.png'),
-                //   backgroundColor: Colors.white,
-                // )
-              ],
-              accountEmail: Text('qhftkf1@naver.com'),
-              accountName: Text('Song'),
-              onDetailsPressed: (){
-                print("test");
-              },
-              decoration: BoxDecoration(
-                color: Colors.red[200],
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0),
-                )
-              ),
             ),
-            ListTile(
-              leading: Icon(Icons.home,
-              color: Colors.grey[850],
-              ),
-              title: Text('Home'),
-              onTap: (){
-                print("Home is clicked");
-              },
-              trailing: Icon(Icons.add),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings,
-                color: Colors.grey[850],
-              ),
-              title: Text('Settings'),
-              onTap: (){
-                print("Settings is clicked");
-              },
-              trailing: Icon(Icons.add),
-            ),
-            ListTile(
-              leading: Icon(Icons.question_answer,
-                color: Colors.grey[850],
-              ),
-              title: Text('Q&A'),
-              onTap: (){
-                print("Q&A is clicked");
-              },
-              trailing: Icon(Icons.add),
-            )
-          ],
-        ),
+            backgroundColor: Colors.teal,
+            duration: Duration(milliseconds: 1000),
+          ),
+          );
+        },
       ),
     );
-
   }
 }
